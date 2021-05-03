@@ -1,0 +1,14 @@
+---
+stages:
+  - build
+
+build-images:
+  stage: build
+  script:
+    - docker build -t env -f dev.Dockerfile .
+    - docker run --rm env make
+    - docker image rm env
+  artifacts:
+    paths:
+      - */out/*.png
+    expire_in: 1 week
