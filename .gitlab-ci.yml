@@ -10,5 +10,5 @@ build-images:
     - docker image rm env
   artifacts:
     paths:
-      - */out/*.png
+      - ./koji/out
     expire_in: 1 week
