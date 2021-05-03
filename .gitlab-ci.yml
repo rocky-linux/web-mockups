@@ -3,6 +3,7 @@ stages:
   - build
 
 build-images:
+  image: docker:20.10.6-dind
   stage: build
   script:
     - docker build -t env -f dev.Dockerfile .
